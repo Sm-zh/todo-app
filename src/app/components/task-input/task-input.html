@@ -1,0 +1,4 @@
+<div id="task-input-div">
+    <input #taskTitle placeholder="Enter a Task" (keydown.enter)="addTask(taskTitle.value); taskTitle.value = ''">
+    <button (click)="addTask(taskTitle.value); taskTitle.value = ''">Add</button>
+</div>

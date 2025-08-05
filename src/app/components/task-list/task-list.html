@@ -1,0 +1,34 @@
+<div id="task-list-div">
+  <h1 id="my-tasks">My Tasks</h1>
+  <ul>
+    @for (task of tasks; track task) {
+    <li [class]="{ done: task.completed }">
+      @if (wantToEdit && taskId === task.id) {
+      <input id="checkbox" class="hide" [disabled]="true" type="checkbox" [checked]="task.completed"
+        (change)="toggle.emit(task.id)">
+      <textarea id="edit-textarea" value="{{ task.title }}" (input)="autoGrow(newTask)"
+        (keydown.enter)="confirmEdit(task, newTask.value)" #newTask></textarea>
+      <div class="buttons-div">
+        <button id="edit-button" (click)="confirmEdit(task, newTask.value)">Done</button>
+        <span class="seperater-line"></span>
+        <button id="delete-button" (click)="delete.emit(task.id)">🗑</button>
+      </div>
+      }
+      @else {
+      <input id="checkbox" type="checkbox" [checked]="task.completed" (change)="toggle.emit(task.id)">
+      <p class="task-title">{{ task.title }}</p>
+      <div class="buttons-div">
+        <button id="edit-button" (click)="editTask(task)">🖉</button>
+        <span class="seperater-line"></span>
+        <button id="delete-button" (click)="delete.emit(task.id)">🗑</button>
+      </div>
+      }
+    </li>
+
+    }
+    @empty {
+    <h1 class="no-tasks-h1">No Tasks</h1>
+    }
+  </ul>
+</div>
+<script src="script.ts"></script>

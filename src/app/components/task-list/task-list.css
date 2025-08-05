@@ -1,0 +1,111 @@
+ul {
+  padding: 1rem 0;
+  border-radius: 0.7rem;
+  justify-items: center;
+}
+
+li {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  list-style: none;
+  width: 75vw;
+  min-height: 10vh;
+  padding: 0 0.5rem;
+  border: none;
+  border-radius: 0.75rem;
+  margin: 1rem;
+  background-color: #f0f0f0;
+  color: #001122;
+}
+
+li.done {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.task-title {
+  justify-self: start;
+  margin: 1rem 0;
+  font-size: 2rem;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+#edit-input {
+  width: 80%;
+  height: fit-content;
+  border: dashed 0.1rem #001122;
+  border-radius: 0.5rem;
+  background-color: transparent;
+  font-size: 2rem;
+}
+
+#edit-textarea {
+  width: 95%;
+  height: fit-content;
+  border: dashed 0.1rem #001122;
+  border-radius: 0.5rem;
+  margin: 1rem 0;
+  background-color: transparent;
+  font-size: 2rem;
+  resize: none;
+}
+
+#checkbox {
+  width: 2rem;
+  height: 2rem;
+  margin: 0 1rem;
+  accent-color: darkcyan;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.buttons-div {
+  justify-self: end;
+  display: flex;
+}
+
+button {
+  width: max-content;
+  padding: 0 0.5rem;
+  border: solid 0.2rem transparent;
+  border-radius: 0.5rem;
+  color: darkcyan;
+  font-size: 1.5rem;
+}
+
+button:hover {
+  border-radius: 0.5rem;
+  background-color: darkcyan;
+  color: #f0f0f0;
+  font-size: 1.5rem;
+}
+
+.seperater-line {
+  border: solid 0.1rem #001122;
+  margin: 0 1rem;
+}
+
+#delete-button:hover {
+  border-radius: 0.5rem;
+  background-color: red;
+  color: #f0f0f0;
+  font-size: 1.5rem;
+}
+
+#my-tasks {
+  min-height: fit-content;
+  padding: 1rem;
+  border-bottom: solid 0.2rem #001122;
+  font-size: 3rem;
+  color: #f0f0f0;
+}
+
+.no-tasks-h1 {
+  font-size: 2rem;
+  color: #f0f0f0;
+  text-align: center;
+}

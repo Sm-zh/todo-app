@@ -1,0 +1,28 @@
+input {
+    width: 35vw;
+    height: 5vh;
+    padding: 0 0.5rem;
+    border: none;
+    border-radius: 1rem 0 0 1rem;
+    /* margin-right: 1vw; */
+    background-color: #f0f0f0;
+    color: #001122;
+    font-size: larger;
+}
+
+button {
+    width: 5vw;
+    height: 6vh;
+    padding: 0 0.5rem;
+    border: none;
+    border-radius: 0 1rem 1rem 0;
+    background-color: #001122;
+    color: lightgreen;
+    font-size: larger;
+}
+
+button:hover {
+    border-color: #001122;
+    background-color: lightgreen;
+    color: #001122;
+}

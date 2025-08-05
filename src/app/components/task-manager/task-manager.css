@@ -1,0 +1,10 @@
+#task-manager-div {
+    display: grid;
+    grid-template-rows: min-content min-content;
+    row-gap: 10vh;
+    justify-items: center;
+}
+
+app-task-input {
+    height: fit-content;
+}

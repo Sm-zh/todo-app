@@ -1,0 +1,5 @@
+<div id="task-manager-div">
+    <app-task-input (taskAdded)="addTask($event)"></app-task-input>
+    <app-task-list [tasks]="tasks" (delete)="deleteTask($event)" (toggle)="toggleComplete($event)" (edit)="editTask($event)">
+    </app-task-list>
+</div>
