@@ -20,8 +20,19 @@ li {
 }
 
 li.done {
+  width: 80%;
   text-decoration: line-through;
   color: gray;
+  background-color: #001122;
+}
+
+li.done .seperater-line {
+  border-color: #f0f0f0;
+}
+
+li.done #edit-textarea {
+  border-color: #f0f0f0;
+  color: #f0f0f0;
 }
 
 .task-title {
@@ -39,7 +50,7 @@ li.done {
   border-radius: 0.5rem;
   background-color: transparent;
   font-size: 2rem;
-}
+} 
 
 #edit-textarea {
   width: 95%;
@@ -73,6 +84,7 @@ button {
   padding: 0 0.5rem;
   border: solid 0.2rem transparent;
   border-radius: 0.5rem;
+  background-color: transparent;
   color: darkcyan;
   font-size: 1.5rem;
 }
