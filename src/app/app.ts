@@ -6,7 +6,7 @@ import { TaskManager } from './components/task-manager/task-manager';
   selector: 'app-root',
   imports: [RouterOutlet, TaskManager],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.scss'
 })
 export class App {
   protected readonly title = signal('todo-app');

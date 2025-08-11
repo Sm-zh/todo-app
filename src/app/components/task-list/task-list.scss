@@ -54,13 +54,13 @@ li.done #edit-textarea {
 
 #edit-textarea {
   width: 95%;
-  height: fit-content;
   border: dashed 0.1rem #001122;
   border-radius: 0.5rem;
   margin: 1rem 0;
   background-color: transparent;
   font-size: 2rem;
   resize: none;
+  field-sizing: content;
 }
 
 #checkbox {

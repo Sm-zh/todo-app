@@ -1,44 +1,31 @@
-import { Component, Input, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { Component, Input, output, ViewChild, ElementRef, input } from '@angular/core';
 import { Task } from '../../models/task.model';
 
 @Component({
   selector: 'app-task-list',
   imports: [],
   templateUrl: './task-list.html',
-  styleUrl: './task-list.css'
+  styleUrl: './task-list.scss'
 })
 export class TaskList {
-  @Input() tasks: Task[] = [];
-  @Output() delete = new EventEmitter<number>();
-  @Output() toggle = new EventEmitter<number>();
-  @Output() edit = new EventEmitter<[number, string]>();
+  tasks = input<Task[]>();
 
-  @ViewChild('newTask') textarea!: ElementRef<HTMLTextAreaElement>;
+  delete = output<number>();
+  toggle = output<number>();
+  edit = output<[number, string]>();
 
-  wantToEdit: boolean = false;
-  taskId: number = -1;
+  isEditingId: number | null = null;
+
   editTask(task: Task) {
-    this.wantToEdit = !this.wantToEdit;
-    this.taskId = task.id;
-
-    setTimeout(() => {
-      const element = this.textarea?.nativeElement;
-      if (element) {
-        element.style.height = element.scrollHeight + "px";
-      }
-    });
+    this.isEditingId = task.id;
   }
 
   confirmEdit(task: Task, newTask: string) {
     if (!newTask) {
-      alert("No Task is Provided")
+      alert("No Task is Provided");
       return;
     }
     this.edit.emit([task.id, newTask]);
-    this.wantToEdit = !this.wantToEdit;
-  }
-
-  autoGrow(element: HTMLTextAreaElement) {
-    element.style.height = element.scrollHeight + "px";
+    this.isEditingId = null;
   }
 }

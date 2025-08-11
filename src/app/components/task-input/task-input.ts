@@ -1,13 +1,13 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component, output } from '@angular/core';
 
 @Component({
   selector: 'app-task-input',
   imports: [],
   templateUrl: './task-input.html',
-  styleUrl: './task-input.css'
+  styleUrl: './task-input.scss'
 })
 export class TaskInput {
-  @Output() taskAdded = new EventEmitter<string>();
+   taskAdded = output<string>();
 
   addTask(taskTitle: string) {
     if (!taskTitle.trim()) return;

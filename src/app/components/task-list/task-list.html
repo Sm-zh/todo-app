@@ -1,13 +1,17 @@
-<div id="task-list-div" style="min-width: 90vw;">
+<div id="task-list-div" >
   <h1 id="my-tasks">My Tasks</h1>
   <ul>
-    @for (task of tasks; track task) {
+    @for (task of tasks(); track task) {
     <li [class]="{ done: task.completed }">
-      @if (wantToEdit && taskId === task.id) {
+       @if (isEditingId == task.id) {
       <input id="checkbox" class="hide" [disabled]="true" type="checkbox" [checked]="task.completed"
         (change)="toggle.emit(task.id)">
-      <textarea id="edit-textarea" value="{{ task.title }}" (input)="autoGrow(newTask)"
-        (keydown.enter)="confirmEdit(task, newTask.value)" #newTask></textarea>
+      <textarea
+        id="edit-textarea"
+        [value]="task.title"
+        (keydown.enter)="confirmEdit(task, newTask.value)"
+        #newTask
+      ></textarea>
       <div class="buttons-div">
         <button id="edit-button" (click)="confirmEdit(task, newTask.value)">Done</button>
         <span class="seperater-line"></span>
@@ -31,4 +35,3 @@
     }
   </ul>
 </div>
-<script src="script.ts"></script>
